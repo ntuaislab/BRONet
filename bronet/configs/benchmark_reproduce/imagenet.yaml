@@ -1,0 +1,51 @@
+model:
+  depth: 14
+  depth_1: 6
+  depth_2: 8
+  width: 588
+  use_lln: True
+  num_lc_iter: 10
+  act_name: "MinMax"
+  stem_kernel_size: 5
+  backbone_type: "hybridbrov2"
+  backbone_centering: True
+  backbone_weight_rank_ratio: 0.5
+
+  neck_conv_type: "l2"
+  neck_linear_type: "cholesky"
+  neck_conv_patch_size: 8
+  neck_conv_patch_size_2: 0
+
+  dense_type: "cholesky"
+  dense_width: 2048
+  linear_num: 8
+
+training:
+  batch_size: 1024
+  epochs: 400
+  warmup_epochs: 20
+  lr: 1.0e-3
+  weight_decay: 0.0
+  grad_clip: True
+  grad_clip_val: 3
+  nadam: True
+  lion: False
+  sgd: False
+  momentum: 0.0
+  lookahead: True
+
+dataset:
+  name: "imagenet"
+  num_classes: 1000
+  input_size: 224
+  ddpm: False
+  ddpm_ratio: 0
+
+loss:
+  eps: 0.1411764705882353
+  min_eps_ratio: 0.1
+  max_eps_ratio: 2.0
+  loss_type: "logit_annealing_loss"
+  gamma: 5.0
+  temperature: 0.75
+  offset: 2.0

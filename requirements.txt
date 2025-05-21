@@ -1,0 +1,15 @@
+packaging
+gpustat
+ipdb
+matplotlib
+einops
+matplotlib
+numpy==1.26.0
+pandas
+PyYAML
+torch==2.0 --extra-index-url https://download.pytorch.org/whl/cu118
+torchvision --extra-index-url https://download.pytorch.org/whl/cu118
+git+https://github.com/fra31/auto-attack
+ipykernel
+tqdm
+timm
