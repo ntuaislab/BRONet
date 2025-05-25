@@ -1,12 +1,10 @@
 # LipConvnet
 
-## Run
-
-### Prerequisites
+## Prerequisites
 
 The root folder for datasets is `./data` by default.
 
-### Training Command
+## Run
 
 To reproduce the results for LipConvNet-10-32 with the BRO layer, run the command below.
 For more details on available arguments, refer to `main.py`.
@@ -20,6 +18,6 @@ python main.py \
     --out-dir ./exp/LipConvnet \
 ```
 
-### Note
+## Note
 
-We also support other orthogonal convolution methods, such as Cayley, SOC and LOT.
+We also support additional orthogonal convolution layers, including Cayley, SOC, and LOT.

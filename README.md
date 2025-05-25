@@ -1,6 +1,12 @@
 # Enhancing Certified Robustness via Block Reflector Orthogonal Layers and Logit Annealing Loss
 
+![](https://badgen.net/github/last-commit/ntuaislab/BRONet)
+![](https://badgen.net/github/license/ntuaislab/BRONet)
+[![arXiv](https://img.shields.io/badge/arXiv-2505.15174-b31b1b.svg)](https://www.arxiv.org/abs/2505.15174)
 
+<!--![](https://badgen.net/github/contributors/ntuaislab/BRONet)-->
+
+## [Project Page](https://bob1113.github.io/BRONet/) | [ArXiv](https://www.arxiv.org/abs/2505.15174) | [Poster & Slides](https://icml.cc/virtual/2025/poster/45247)
 
 ## 🚂 Overview
 
@@ -29,17 +35,7 @@ To set up the environment and run our code:
 - PyTorch ≥ 2.0 with CUDA support
 - A recent NVIDIA GPU (e.g., Ampere or newer) is recommended for training and certification
 
-### 2. Installation
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/ntuaislab/BRONet.git
-cd BRONet
-pip install -r requirements.txt
-```
-
-### 3. Reproduce the paper results
+### 2. Reproduce the paper results
 
 To reproduce the main results in the paper, run the following command:
 
@@ -59,7 +55,11 @@ To test the provided models, download the checkpoint and config file, then run:
 
 ```bash
 cd bronet
-python test.py --resume_from="path_to_downloaded_checkpoint" --config="path_to_config"
+OMP_NUM_THREADS=1 torchrun --nproc_per_node=1 \
+  test.py --launcher=pytorch \
+  ---master_port $MASTER_PORT=$((12000 + $RANDOM % 20000)) \
+  --config='path_to_config' \
+  --resume_from='path_to_downloaded_checkpoint'
 ```
 
 See [`bronet/README.md`](./bronet/README.md) for instructions on reproducing the results.
