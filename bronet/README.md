@@ -8,7 +8,7 @@ Code in this repository is adapted from [code repo of LiResNet](https://github.c
 - For experiments with diffusion augmentation experiments (Table 2):
   - Download CIFAR-10 EDM 4M released by: [LiResNet](https://github.com/hukkai/liresnet/tree/main), and move it to `./data/c10_ddpm.npz`.
   - CIFAR-100 EDM 1M released by: [DM-Improves-AT](https://github.com/wzekai99/DM-Improves-AT), and move it to `./data/cifar100_edm_1m.npz`.
-  - ImageNet EDM2 (+AutoGuidance) 2M: Please use the checkpoint `edm2-img512-xxl-autog-dino` and generation script in [EDM2](https://github.com/NVlabs/edm2) to generate 2 Million 512x512 images. Remember to adapt the image saving logic such that they are placed under `./data/imagenet_ddpm/` with subfolders named after class idx (eg., `./data/imagnet_ddpm/0/`, `./data/imagnet_ddpm/1/`, ...).
+  - ImageNet EDM2 (+AutoGuidance) 2M: Please clone the repo [edm2](https://github.com/NVlabs/edm2) and use the checkpoint `edm2-img512-xxl-autog-dino` to generate 2 Million 512x512 images. The generation script should be adapted so that the images are saved under subfolders named after class idx (eg., `./out/0/`, `./out/1/`, ...). The adapted generation scripts and commands are provided in `edm2_gen_script/`, which can be used in your cloned `edm2/` repo. After generation, the `bronet` training scripts expect the images and class subfolders are placed in `./data/imagenet_ddpm/`.
 
 ## Run
 
