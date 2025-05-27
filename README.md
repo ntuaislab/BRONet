@@ -1,6 +1,5 @@
 # Enhancing Certified Robustness via Block Reflector Orthogonal Layers and Logit Annealing Loss
 
-![](https://badgen.net/github/last-commit/ntuaislab/BRONet)
 ![](https://badgen.net/github/license/ntuaislab/BRONet)
 [![arXiv](https://img.shields.io/badge/arXiv-2505.15174-b31b1b.svg)](https://www.arxiv.org/abs/2505.15174)
 
